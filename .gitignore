@@ -1,7 +1,20 @@
 *
 !.gitignore
-!\nvim/
-!\eww/
-!\hypr/
-!\kitty/
-!\fish/
+! nvim/
+! eww/
+! hypr/
+! kitty/
+! fish/
+# Abaikan file yang dihasilkan oleh editor
+*.swp
+*~
+
+# Abaikan file cache dan build
+/build
+/dist
+
+# Abaikan file log
+*.log
+
+# Abaikan direktori yang tidak perlu dilacak
+/node_modules
