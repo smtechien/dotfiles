@@ -1,0 +1,169 @@
+* {
+  all: unset;
+}
+
+.bar {
+  background-color: rgba(0, 0, 0, 0);
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.left {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.right {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.workspaces-widget {
+  padding-left: 10px;
+  padding-right: 5px;
+  background-color: #0A1128;
+  border: 1px solid #88bfcf;
+}
+
+.workspace-entry {
+  margin-right: 5px;
+}
+
+.occupied {
+  font-size: 10px;
+  color: #88bfcf;
+}
+
+.empty {
+  font-size: 10px;
+  color: #2e383c;
+}
+
+.current {
+  font-size: 10px;
+  color: #88bfcf;
+}
+
+.iconbox {
+  padding-right: 10px;
+  padding-left: 11px;
+  background-color: #0A1128;
+  color: #88bfcf;
+  border: 1px solid #88bfcf;
+  margin-right: 5px;
+}
+
+.icon {
+  color: #88bfcf;
+  font-size: 10px
+}
+
+.sidebar-btn {
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+  background-color: #493b40;
+}
+
+.sidebar-btn-label {
+  color: #e69875;
+}
+
+.time-widget {
+  font-size: 10px;
+  color: #88BFCF;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #0A1128;
+  border: 1px solid #88bfcf;
+}
+
+.time-icon {
+  color: #88BFCF;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.wifi-widget {
+  font-size: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 10px;
+  background-color: #0A1128;
+  color: #88BFCF;
+  border: 1px solid #88bfcf;
+}
+
+.wifi-icon {
+  color: #88BFCF;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.battery-widget {
+  font-size: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border: 1px solid #88bfcf;
+  margin-right: 10px;
+  background-color: #0A1128;
+  color: #88BFCF;
+}
+
+.battery-icon {
+  font-size: 10px;
+  margin-right: 10px;
+  color: #88BFCF;
+}
+
+.battery-low {
+  color: #e67e80;
+}
+
+.battery-med {
+  color: #dbbc7d
+}
+
+.battery-high {
+  color: #88BFCF;
+}
+
+.task-widget {
+  font-size: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #0A1128;
+  color: #88BFCF;
+  border: 1px solid #88bfcf;
+}
+
+.volume-widget {
+  font-size: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 10px;
+  background-color: #0A1128;
+  color: #88BFCF;
+  border: 1px solid #88bfcf;
+}
+
+.volume-icon {
+  color: #88BFCF;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.volume-margin {
+  margin-left: 2px;
+}
+
+.volume-bar trough highlight {
+  background-color: #7fbbb3;
+  border-radius: 5px;
+  min-width: 70px;
+}
+
+.tray {
+  background-color: #2e383c;
+  margin-right: 10px;
+  border-radius: 5px;
+}

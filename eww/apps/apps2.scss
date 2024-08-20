@@ -1,0 +1,32 @@
+.apps2 {
+  color: #88BFCF;
+}
+
+.app-icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  border: 1px solid #88BFCF;
+  min-width: 34px;
+  min-height: 34px;
+
+  &:hover {
+    background-color: #1282A2;
+  }
+}
+
+.youtube {
+  background-image: url('./assets/video.svg');
+}
+.htop {
+  background-image: url('./assets/htop.svg');
+}
+.filezilla {
+  background-image: url('./assets/filezilla.svg');
+}
+.libreoffice {
+  background-image: url('./assets/libreoffice.svg');
+}
+.blender {
+  background-image: url('./assets/blender.svg');
+}

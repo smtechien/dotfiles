@@ -1,0 +1,77 @@
+(defpoll player_title :interval "2s"
+	   "./scripts/media-control.sh title")
+
+(defpoll player_artist :interval "2s"
+	   "./scripts/media-control.sh artist")
+
+(defpoll player_cover :interval "10s"
+	   "./scripts/media-control.sh cover")
+
+;; apps windo0w
+(defwindow player
+  :monitor 0
+  :stacking "bg"
+  :geometry (geometry
+              :x "345px"
+              :y "400px"
+              :height "100px"
+            )
+  (player_box))
+
+;; player widget
+(defwidget player_box[]
+  (box 
+    :orientation "v"
+    :class "player_box"
+    :valign "end"
+    :space-evenly false
+    :style '${player_cover}'
+    (player_info) (player_action)))
+
+(defwidget player_info[]
+  (box 
+    :orientation "v"
+    :class "player_info"
+    (player_info_title) (player_info_artist)))
+
+(defwidget player_info_title[]
+  (label
+    :truncate-right true
+    :wrap true
+    :limit-width 15 
+    :class "player_info_title"
+    :halign "start"
+    :text '${player_title}')) 
+
+(defwidget player_info_artist[]
+  (box
+    :class "player_info_artist"
+    :halign "start"
+    '${player_artist}')) 
+
+(defwidget player_action[]
+  (box
+    :orientation "h"
+    :class "player_action"
+    :halign "start"
+    :spacing 80
+    (player_action_prev) (player_action_togggle) (player_action_next)))
+
+(defwidget player_action_prev[]
+   (button
+     :class "player_action_icon"
+     :onclick "./scripts/media-control.sh prev"
+     '󰒮')) 
+
+(defwidget player_action_togggle[] 
+  (button
+    :class "player_action_icon"
+    :onclick "./scripts/media-control.sh toggle"
+    '󰐎')) 
+
+(defwidget player_action_next[]
+  (button 
+    :class "player_action_icon"
+    :onclick "./scripts/media-control.sh next"
+    '󰒭')) 
+

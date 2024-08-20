@@ -1,0 +1,11 @@
+(defwindow logo
+  :monitor 0
+  :stacking "bg"
+  :geometry (geometry
+              :x "580px"
+              :y "280px"
+              :width "220px"
+              :height "220px"
+            )
+  (box))
+

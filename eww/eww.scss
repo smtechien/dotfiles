@@ -1,0 +1,11 @@
+@import "./bar.scss";
+@import "./datetime/datetime.scss";
+@import "./apps/apps.scss";
+@import "./apps/apps2.scss";
+@import "./player/player.scss";
+@import "./logo/logo.scss";
+
+* {
+  all: unset;
+  font-family: "JetBrains Mono Nerd Font";
+}

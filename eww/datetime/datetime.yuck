@@ -1,0 +1,44 @@
+;; pooling date and time
+(defpoll current_hour :interval "1s"
+	   "echo $(date +%R | cut -d ':' -f 1)")
+
+(defpoll current_minute :interval "1s"
+	   "echo $(date +%R | cut -d ':' -f 2)")
+
+(defpoll current_date :interval "1s" "date '+%A, %b %d %Y'")
+
+;; datetime window 
+(defwindow datetime
+  :monitor 0
+  :stacking "bg"
+  :geometry (geometry
+              :x "345px"
+              :y "280px"
+              :width "220px"
+              :height "105px"
+            )
+  (datetime_box))
+
+;; datetime widget
+(defwidget datetime_box []
+  (box
+    :orientation "v"
+    :class "datetime_box"
+    :space-evenly false
+    (datetime_clock) (datetime_date)))
+
+;; date
+(defwidget datetime_date[]
+  (box 
+   :class "datetime_date"
+   :halign "start"
+   "${current_date}"))
+
+;; clock 
+(defwidget datetime_clock[]
+  (box 
+    :class "datetime_clock"
+    :halign "start"
+    "${current_hour}:${current_minute}"))
+
+

@@ -1,0 +1,168 @@
+(defwidget bar []
+  (box :space-evenly true
+    (left)
+    (right)
+  )
+)
+
+(defwidget left []
+  (box :space-evenly false
+       :spacing "10"
+       :class "left"
+    (workspaces)
+    (task)
+  )
+)
+
+
+(defwidget right []
+  (box :space-evenly false
+       :class "right"
+       :halign "end"
+    (ping)
+    (cpu) 
+    (memory)
+    (volume)
+    (brightness)
+    (battery)
+    (wifi)
+    (time)
+  )
+)
+
+(defwidget icon []
+  (eventbox :onclick "rofi -show drun &" 
+    (box :space-evenly false :class "iconbox"
+      (label :class "icon" :text "")
+    )
+  )
+)
+
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces.sh")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace.sh")
+(defwidget workspaces []
+  (eventbox :onscroll "bash ~/.config/eww/scripts/change-active-workspace.sh {} ${current_workspace}"
+    (box :space-evenly false 
+         :class "workspaces-widget"
+      (label :text "${workspaces}${current_workspace}" 
+             :visible false)
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}" 
+                  :class "workspaces-elements-box"
+          (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text "${workspace.id == current_workspace ? "󰮯" : ""}")
+            )
+          )
+        )
+      )
+    )
+)
+
+(defvar mytask "What's on your agenda today? Let's make it epic.")
+(defwidget task []
+  (box :space-evenly false 
+       :class "task-widget"
+       :hexpand true
+       :halign "start"
+    (label :text "${mytask}")
+  )
+)
+
+
+(defwidget cpu []
+  (box :space-evenly false 
+       :class "volume-widget"
+    (label :class "volume-icon" 
+           :text "")
+    (label :text "${round(EWW_CPU.avg, 0)}%")
+  )
+)
+
+(defwidget memory []
+  (box :space-evenly false 
+       :class "volume-widget"
+    (label :class "volume-icon" 
+           :text "󰆼")
+    (label :text "${round(EWW_RAM.used_mem_perc, 0)}%")
+  )
+)
+
+(defpoll ping :interval "3s" "./scripts/ping.sh")
+(defwidget ping []
+  (box :space-evenly false 
+       :class "volume-widget"
+    (label :class "volume-icon"
+           :text "󰑩")
+    (label :text "${ping}")
+  )
+)
+
+(defpoll volume :interval "1s" "./scripts/get_volume.sh")
+(defwidget volume []
+  (eventbox :onscroll "./scripts/volume.sh {}"
+    (box :space-evenly false 
+         :class "volume-widget"
+      (label :class "volume-icon" 
+             :text "")
+      (label :text "${volume}")
+    )
+  )
+)
+
+(defpoll brightness :interval "1s" "./scripts/get_backlight.sh")
+(defwidget brightness []
+  (eventbox :onscroll "./scripts/backlight.sh {}"
+    (box :space-evenly false 
+         :class "volume-widget"
+      (label :class "volume-icon" 
+             :text "󰃠")
+      (label :text "${brightness}%")
+    )
+  )
+)
+
+(defpoll time :interval "1s" "date '+%b %d, %H:%M'")
+(defwidget time []
+  (box :space-evenly false 
+       :class "time-widget"
+    (label :class "time-icon" 
+           :text "")
+    (label :text "${time}")
+  )
+)
+
+(defpoll wifi-name :interval "1s" "nmcli -t -f NAME connection show --active | awk 'NR==1 {print}'")
+(defwidget wifi []
+  (eventbox :onclick "kitty -e nmtui &"
+    (box :space-evenly false 
+         :class "wifi-widget"
+      (label :class "wifi-icon" 
+             :text "󰤨")
+      (label :limit-width 10
+             :text "${wifi-name}")
+    )
+  )
+)
+
+(defpoll current_state :interval "1s" "./scripts/battery.sh")
+(defpoll current_percentage :interval "1s" "upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep -E \"percentage\" | awk '{split($2, a, \".\"); print a[1]}'")
+
+(defwidget battery []
+  (box :space-evenly false 
+       :class "volume-widget"
+    (label :class "volume-icon"
+           :text "󰁹")
+    (label :text "${current_percentage}")
+  )
+)
+
+(defwindow bar
+    :monitor 0
+    :windowtype "dock"
+    :geometry (geometry :x "0%"
+                        :y "0%"
+                        :width "100%"
+                        :height "30px"
+                        :anchor "top center")
+    (bar)
+)

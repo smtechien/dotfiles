@@ -1,0 +1,58 @@
+;; apps window
+(defwindow apps2
+  :monitor 0
+  :stacking "bg"
+  :geometry (geometry
+              :x "854px"
+              :y "280px"
+              :width "34px"
+            )
+  (apps2))
+
+;; apps widget
+(defwidget apps2[]
+  (box
+    :orientation "v"
+    :class "apps"
+    :spacing 10
+    (youtube) (blender) (filezilla) (htop) (libreoffice) ))
+
+(defwidget blender[]
+  (button
+    :class "app-icon blender"
+    :vexpand "false"
+    :hexpand "false"
+    :onclick "blender"
+    ))
+
+(defwidget filezilla[]
+  (button
+    :class "app-icon filezilla"
+    :vexpand "false"
+    :hexpand "false"
+    :onclick "filezilla&"
+    ))
+
+(defwidget libreoffice[]
+  (button
+    :class "app-icon libreoffice"
+    :vexpand "false"
+    :hexpand "false"
+    :onclick "libreoffice&"
+    ))
+
+(defwidget htop[] 
+  (button
+    :class "app-icon htop"
+    :vexpand "false"
+    :hexpand "false"
+    :onclick "kitty htop&"
+    ))
+
+(defwidget youtube[]
+  (button
+    :class "app-icon youtube"
+    :vexpand "false"
+    :hexpand "false"
+    :onclick "bash /opt/brave.com/brave/brave-browser --profile-directory=Default --app-id=agimnkijcaahngcdmfeangaknmldooml&"
+    ))

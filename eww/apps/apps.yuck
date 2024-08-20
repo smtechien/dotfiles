@@ -1,0 +1,59 @@
+;; apps window
+(defwindow apps 
+  :monitor 0
+  :stacking "bg"
+  :geometry (geometry
+              :x "810px"
+              :y "280px"
+              :width "34px"
+            )
+  (apps))
+
+;; apps widget
+(defwidget apps[]
+  (box
+    :orientation "v"
+    :class "apps"
+    :spacing 10
+    (firefox) (edge) (logseq) (terminal) (files)))
+
+(defwidget firefox []
+  (button
+    :class "app-icon firefox"
+    :vexpand "false"
+    :hexpand "false"
+    :onclick "firefox&"
+    ))
+
+(defwidget edge []
+  (button
+    :class "app-icon edge"
+    :vexpand "false"
+    :hexpand "false"
+    :onclick "microsoft-edge&"
+    ))
+
+(defwidget logseq[]
+  (button
+    :class "app-icon logseq"
+    :vexpand "false"
+    :hexpand "false"
+    :onclick ""
+    :onclick "~/Applications/Joplin_c21541ef36a0a7b9b398be67783d2910.AppImage&"
+    ))
+
+(defwidget terminal []
+  (button 
+    :class "app-icon terminal"
+    :vexpand "false"
+    :hexpand "false"
+    :onclick "kitty ~&"
+    ))
+
+(defwidget files[]
+  (button 
+    :class "app-icon files"
+    :vexpand "false"
+    :hexpand "false"
+    :onclick "nautilus&"
+    ))

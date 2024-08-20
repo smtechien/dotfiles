@@ -1,0 +1,37 @@
+.apps {
+  color: #88BFCF;
+}
+
+.app-icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  border: 1px solid #88BFCF;
+  min-width: 34px;
+  min-height: 34px;
+
+  &:hover {
+    background-color: #1282A2;
+  }
+}
+
+.firefox {
+  background-image: url('./assets/firefox.svg');
+}
+
+.edge {
+  background-image: url('./assets/edge.svg');
+}
+.logseq {
+  background-image: url('./assets/notebook.svg');
+}
+.terminal {
+  background-image: url('./assets/terminal.svg');
+}
+.files {
+  background-image: url('./assets/folder.svg');
+}
+
+.youtube {
+  background-image: url('./assets/video.svg');
+}

@@ -1,0 +1,30 @@
+.player {
+  color: #88BFCF;
+}
+
+.player_box {
+  border: 1px solid #88BFCF;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 10px 10px 10px 10px;
+  min-width: 200px;
+}
+
+.player_info_title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.player_info_artist {
+  font-size: 10px;
+}
+
+.player_action {
+  font-size: 12px;
+  margin-top: 10px;
+  padding: 5px 0 0 0;
+  min-width: 200px; 
+  border-top: 1px solid #88BFCF;
+}
+
