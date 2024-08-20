@@ -1,7 +1,7 @@
 *
 !.gitignore
-!nvim/
-!eww/
-!hypr/
-!kitty/
-!fish/
+!\nvim/
+!\eww/
+!\hypr/
+!\kitty/
+!\fish/
