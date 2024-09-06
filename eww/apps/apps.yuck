@@ -15,7 +15,7 @@
     :orientation "v"
     :class "apps"
     :spacing 10
-    (firefox) (edge) (logseq) (terminal) (files)))
+    (brave) (edge) (logseq) (terminal) (files)))
 
 (defwidget firefox []
   (button
@@ -23,6 +23,14 @@
     :vexpand "false"
     :hexpand "false"
     :onclick "firefox&"
+    ))
+
+(defwidget brave []
+  (button
+    :class "app-icon brave"
+    :vexpand "false"
+    :hexpand "false"
+    :onclick "brave-browser-stable&"
     ))
 
 (defwidget edge []
