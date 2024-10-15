@@ -26,6 +26,13 @@ return {
       desc = "Search for the notes matching the current visual selection",
       opts,
     },
+    {
+      "<leader>zN",
+      mode = "v",
+      ":'<,'>ZkNewFromTitleSelection<CR>",
+      desc = "Search for the notes matching the current visual selection",
+      opts,
+    },
   },
   config = function()
     require("zk").setup({

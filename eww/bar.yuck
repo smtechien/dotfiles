@@ -10,7 +10,6 @@
        :spacing "10"
        :class "left"
     (workspaces)
-    (task)
   )
 )
 
@@ -162,7 +161,7 @@
     :geometry (geometry :x "0%"
                         :y "0%"
                         :width "100%"
-                        :height "30px"
+                        :height "20px"
                         :anchor "top center")
     (bar)
 )

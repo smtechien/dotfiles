@@ -24,7 +24,7 @@ bold_italic_font auto
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 12.0
+font_size 6.0
 
 #: Font size (in pts)
 
@@ -994,7 +994,7 @@ tab_powerline_style angled
 
 #: The foreground and background colors.
 
-background_opacity 0.75
+background_opacity 1.0
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -2257,43 +2257,43 @@ map ctrl+alt+p last_used_layout
 # base
 # background           #1E1E2E
 # subtext0
-# title_fg             #A6ADC8
+title_fg             #A6ADC8
 
 # mantle
-# title_bg             #181825
-# margin_bg            #181825
+title_bg             #181825
+margin_bg            #181825
 
 # subtext1
-# margin_fg            #A6ADC8
+margin_fg            #A6ADC8
 # mantle
-# filler_bg            #181825
+filler_bg            #181825
 
 # 30% red, 70% base
-# removed_bg           #5E3F53
+removed_bg           #5E3F53
 # 50% red, 50% base
-# highlight_removed_bg #89556B
+highlight_removed_bg #89556B
 # 40% red, 60% base
-# removed_margin_bg    #734A5F
+removed_margin_bg    #734A5F
 
 # 30% green, 70% base
-# added_bg             #475951
+added_bg             #475951
 # 50% green, 50% base
-# highlight_added_bg   #628168
+highlight_added_bg   #628168
 # 40% green, 60% base
-# added_margin_bg      #546D5C
+added_margin_bg      #546D5C
 
 # mantle
-# hunk_margin_bg       #181825
-# hunk_bg              #181825
+hunk_margin_bg       #181825
+hunk_bg              #181825
 
 # 40% yellow, 60% base
-# search_bg            #A1937B
+search_bg            #A1937B
 # text
-# search_fg            #CDD6F4
+search_fg            #CDD6F4
 # 30% sky, 70% base
-# select_bg            #45475A
+select_bg            #45475A
 # text
-# select_fg            #CDD6F4
+select_fg            #CDD6F4
 
 # selection_foreground    #1E1E2E
 # selection_background    #F5E0DC
@@ -2367,30 +2367,5 @@ map ctrl+alt+p last_used_layout
 
 # BEGIN_KITTY_THEME
 # Kanagawa_dragon
-# include current-theme.conf
+include current-theme.conf
 # END_KITTY_THEME
-
-# cyberdream theme for kitty
-background            #16181a
-foreground            #ffffff
-cursor                #ffffff
-cursor_text_color     #16181a
-selection_background  #3c4048
-color0                #16181a
-color8                #3c4048
-color1                #ff6e5e
-color9                #ff6e5e
-color2                #5eff6c
-color10               #5eff6c
-color3                #f1ff5e
-color11               #f1ff5e
-color4                #5ea1ff
-color12               #5ea1ff
-color5                #bd5eff
-color13               #bd5eff
-color6                #5ef1ff
-color14               #5ef1ff
-color7                #ffffff
-color15               #ffffff
-selection_foreground  #ffffff
-
