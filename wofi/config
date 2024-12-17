@@ -1,7 +1,7 @@
 # Kattunge Wofi Config // Aug 2022
 show=drun
-columns=2
-width=35%
+columns=1
+width=30%
 no_actions=true
 allow_images=true
 insensitive=true

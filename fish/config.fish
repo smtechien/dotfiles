@@ -15,9 +15,11 @@ alias n='nvim' # for nvim
 alias notes='nvim ~/Notes' # for nvim
 alias gemini='~/go/bin/gemini' # for gemini cli
 alias aichat='~/.cargo/bin/aichat' # for aichat - llm AI Chat on cli
+alias bluetui='~/.cargo/bin/bluetui' # for bluetooth manager TUI 
 alias ytmusicapi='~/.local/bin/ytmusicapi' # for ytmusicapi
 alias ytt='~/.local/bin/ytt' # for ytt
 alias hmm='h-m-m' # for h-m-m mindmap tui
+alias blf='~/Shellscripts/blight-filter.sh' #toggle blue light filter with hyprshade
 
 function etask
     command eww update mytask=$argv # update task text on eww 
@@ -26,3 +28,6 @@ end
 
 alias ytv='ytfzf -fs'
 alias ytm='ytfzf -ms'
+
+# Created by `pipx` on 2024-12-15 02:19:04
+set PATH $PATH /home/smtechien/.local/bin
